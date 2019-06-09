@@ -1,11 +1,17 @@
+/* eslint-disable no-loop-func */
+/* eslint-disable default-case */
+/* eslint-disable no-script-url */
+/* eslint-disable no-control-regex */
+/* eslint-disable no-cond-assign */
+/* eslint-disable no-useless-escape */
 /**
  * marked - a markdown parser
  * Copyright (c) 2011-2014, Christopher Jeffrey. (MIT Licensed)
  * https://github.com/markedjs/marked
  */
 
-;(function(root) {
-
+export function marked(arg) {
+//  this || (typeof window !== 'undefined' ? window : global
 
 /**
  * Block-Level Grammar
@@ -1324,7 +1330,7 @@ function splitCells(tableRow) {
  * Marked
  */
 
-function marked(src, opt, callback) {
+var marked = function (src, opt, callback) {
   // throw error in case of non string input
   if (typeof src === 'undefined' || src === null) {
     throw new Error('marked(): input parameter is undefined or null');
@@ -1476,5 +1482,8 @@ marked.parse = marked;
 // } else {
 //   root.marked = marked;
 // }
-console.log(marked('ouai mais ça marche nan ?')); 
-})(this || (typeof window !== 'undefined' ? window : global));
+
+console.log(marked('# ouai mais ça marche nan ?'));
+return marked(arg)
+}
+// export marked(this || (typeof window !== 'undefined' ? window : global))
