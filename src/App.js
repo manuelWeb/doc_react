@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {test} from './Transpiler';
+import {marked}  from './marked';
 
 function App() {
   return (
@@ -9,7 +9,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Comming soon Documentation <code>under react src/App.js</code> {test}!
+          Comming soon Documentation <code>under react src/App.js</code>  !
+          {/* {marked('yololoyole')} */}
+          {/* // {marked('# Hello h1')} */}
         </p>
         <a
           className="App-link"
