@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
-import './App.css';
-
+import React, { Component } from 'react'
+import './App.css'
+import Link from './Linktomd'
 
 class App extends Component {
-  render(){
+  render () {
     return (
-      <h1>Je suis un titre</h1>
+      <div>
+        <h1>Header</h1>
+        <Link />
+      </div>
     )
   }
 }
 
-export default App;
+export default App
