@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-<<<<<<< HEAD
 import ReactMarkdown from 'react-markdown'
 import './App.css'
 import './css/github.css'
@@ -33,17 +32,6 @@ class App extends Component {
         <div className="markdown-body">
           <ReactMarkdown source={post} escapeHtml={false} />
         </div>
-=======
-import './App.css'
-import Link from './Linktomd'
-
-class App extends Component {
-  render () {
-    return (
-      <div>
-        <h1>Header</h1>
-        <Link />
->>>>>>> add link Component OK no bug TOFIX onClick return is not a function
       </div>
     )
   }
