@@ -1,35 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import Link from './Linktomd'
 
 const ReactMarkdown = require('react-markdown')
-const testmd = require('./grids.md')
+// const testmd = require('./grids.md')
 const input = '# Header…\n\npis un paragraphe'
 
-function App() {
-  return (
-    <div className="App">
-      <Link />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+class App extends Component {
+  handleLinkClick(link){
+    console.log(link, 'clicked')
+  }
+  render () {
+    return (
+      <div>
+        <Link onClick={this.handleLinkClick} />
         <ReactMarkdown source={input} />
-        <p>
-          {testmd}
-          Comming soon Documentation <code>under react src/App.js</code> !
-        </p>
-        <ReactMarkdown source={testmd} />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
