@@ -1,19 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
-import moMd from './grids.md';
 import './App.css';
-import {marked}  from './marked';
-const test = marked('# Hello h1')
+import Link from './Linktomd'
+
+const ReactMarkdown = require('react-markdown')
+const testmd = require('./grids.md')
+const input = '# Header…\n\npis un paragraphe'
+
 function App() {
   return (
     <div className="App">
+      <Link />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <div>{marked('# yololoyole')}</div>
+        <ReactMarkdown source={input} />
         <p>
+          {testmd}
           Comming soon Documentation <code>under react src/App.js</code> !
         </p>
-        <div dangerouslySetInnerHTML={{ __html: marked('## hello h2#hello… by md') }} />
+        <ReactMarkdown source={testmd} />
         <a
           className="App-link"
           href="https://reactjs.org"
