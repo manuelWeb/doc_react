@@ -31,7 +31,7 @@ class App extends Component {
   // }
   handleLinkClick (link) {
     console.log(link, 'clicked');
-    hopla('grids.md')
+    hopla(link)
   }
   render () {
     const { post } = this.state;
