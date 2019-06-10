@@ -55,7 +55,7 @@
 Ne pas appliquer la règle des 8 points (ou 4 points) entraine des incohérences sur la taille des images et le placement des icons par rapport à la hauteur de ligne. Voir organisms.sketch > pagelist taille de l'image principale > image/format1-1/330-328 (atoms.sketch).  
 La solution est de garder le même rythme vertical sur la largeur de la page voir les propositions de grilles X3 beak points ci-dessous.
 
-![columns, gutters, and margins.]( assets/images/grids/material.io-layout-grid.png )
+![columns, gutters, and margins.]( ./assets/images/grids/material.io-layout-grid.png )
 1 columns, 2 gutters, 3 margins
 
 ## Solution en place sur Becquet (out of 8pt sys)

@@ -1,0 +1,88 @@
+/* surcharge github markdown styles */
+.markdown-body {
+  min-width: 638px;
+  margin: 0;
+  padding: 20px;
+  border-color: #fafafa;
+  background-color: #fefefe;
+}
+/* END surcharge github styles */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container > ul {
+  padding: 0;
+}
+.container > ul >li {
+  margin-right: 0.4em;
+  list-style: none;
+}
+.container > ul > li > a {
+  display: block;
+  margin-bottom: 8px;
+  background-color: #ff7200;
+  padding: 15px 8px;
+  color: #fff;
+  font-family: sans-serif;
+  text-decoration: none;
+  transition: background-color .1s;
+}
+.container > ul > li > a:hover,
+.container > ul > li > a.actif {
+  text-decoration: underline;
+  background-color: #0B82E9;
+}
+
+/* http://stephen.io/mediaqueries/#iPad iPad in portrait & landscape */
+/* @media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px),
+and (min-device-width : 375px)
+and (max-device-width : 667px) {
+  .container {flex-direction: row;}
+} */
+@media only screen
+and (min-width : 375px)
+and (max-width : 1250px) {
+  .container > ul {display: flex;}
+  .container > ul > li {display: flex; text-align: center;}
+  .container > ul > li:last-child {margin-right: 0;}
+}
+
+/* form */
+.markdown-body fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.markdown-body label {
+  display: block;
+  color: #ff7200;
+}
+.markdown-body input,
+.markdown-body button {
+  vertical-align: middle;
+}
+.markdown-body input {
+  height: 48px;
+  padding-left: 8px;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #ff7200;
+  font-size: 24px;
+}
+.markdown-body input:focus {
+  outline: none;
+}
+.markdown-body button {
+  height: 48px;
+  margin-left: -5px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #ff7200;
+}
+

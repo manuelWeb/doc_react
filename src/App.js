@@ -27,9 +27,11 @@ class App extends Component {
   render () {
     const { post } = this.state;
     return (
-      <div className="markdown-body">
+      <div className="container">
         <Link onClick={this.handleLinkClick} />
-        <ReactMarkdown source={post} escapeHtml={false} />
+        <div className="markdown-body">
+          <ReactMarkdown source={post} escapeHtml={false} />
+        </div>
       </div>
     )
   }
