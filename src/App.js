@@ -8,18 +8,16 @@ const ReactMarkdown = require('react-markdown')
 const input = '# Header…\n\npis un paragraphe'
 
 function getMdByName(name) {
-  // return require("./md_files/grids.md")
   return require(`./md_files/${name}`)
 }
 
-// const readmePath = require("./md_files/grids.md");
-// const readmePath = getMdByName("grids.md")
-var hellomd = () => fetch( getMdByName("grids.md") )
+var hellomd = (name) => fetch( getMdByName(name) )
   .then(response => response.text())
   .then(text => {
-    console.log(text)
+    console.log(text);
   })
-console.log(hellomd());
+hellomd('grids.md')
+
 class App extends Component {
   handleLinkClick (link) {
     console.log(link, 'clicked')
