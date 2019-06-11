@@ -26,18 +26,23 @@ class App extends Component {
       this.state = {
         post: null,
         data: null,
-        num: null
+        num: null,
+        mdname: null,
       }
     this.hopla = hopla.bind(this)
   }
   // arrow func to garantee this
-  testfn = () => {
-    fetch(require(`./md_files/grids.md`))
+  testfn = (md_name) => {
+    console.log(`./md_files/${md_name}`);
+    fetch(require(`./md_files/${md_name}`))
     .then(res => res.text())
     .then( data => console.log(data) )
+
     return this.setState(state => ({
-      num: state.num + 1
+      num: state.num + 1,
+      mdname: md_name
     }));
+
   }
 
   handleLinkClick(link) {
@@ -49,8 +54,12 @@ class App extends Component {
     const { post } = this.state
     return (
       <div className="container">
-        <button onClick={this.testfn}>{this.state.num ? this.state.num : 0}</button>
-        <Link onClick={this.handleLinkClick} />
+        <button onClick={this.testfn}>
+          {this.state.num ? `${this.state.num} ${this.state.mdname} `
+            : 0}
+        </button>
+        {/* <Link onClick={this.handleLinkClick} /> */}
+        <Link onClick={this.testfn} />
         <div className="markdown-body">
           <ReactMarkdown source={post} escapeHtml={false} />
         </div>
