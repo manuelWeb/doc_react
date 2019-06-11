@@ -1,4 +1,11 @@
 import React from 'react'
+import './css/styles.css'
+// webpack @see require.context
+// const markdownContext = require.context('./md_files', false, /\.md$/)
+// console.log(markdownContext)
+// console.log(markdownContext.keys())
+// console.log(markdownContext.keys()[0])
+
 const listLink = [
   {id: 1, text: 'Responsive vs Adaptative', link: 'RWDvsAdaptativeWD.md'},
   {id: 2, text: 'Atomic Design Method', link: 'atomic_design_systeme_SK.md'},
