@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown'
-import './App.css'
+import './css/App.css'
 import './css/github.css'
 import Link from './Linktomd'
 import source from './md_files/grids.md'
