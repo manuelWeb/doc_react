@@ -26,7 +26,8 @@ const Link = ({ onClick }) => {
       {listLink.map(item => (
         <li key={item.id}>
           <a
-            className="link__"
+            // className={this.state.clickedLink === 'null' ? 'default' : 'actif'}
+            className="default"
             href={`#link: ${item.link}`}
             onClick={e => onClick(item.link, e)}
           >

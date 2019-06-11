@@ -14,14 +14,19 @@ class App extends Component {
       num: null,
       mdname: [],
       mdcont: null,
+      clickedLink: null,
     }
     this.handleKeyClick = handleKeyClick.bind(this)
   }
   // arrow func to garantee this
   testfn = (md_name, e) => {
     this.setState({ num: this.state.num + 1 })
+    this.setState({ clickedLink: e.target })
     const name = this.state.mdname.concat(' / ' + md_name)
-    console.log(e.target)
+    console.log(e.target.className)
+    e.target.className === 'default'
+      ? (e.target.className = 'actif')
+      : (e.target.className = 'default')
 
     fetch(require(`./md_files/${md_name}`))
       .then(res => res.text())
