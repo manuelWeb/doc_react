@@ -28,6 +28,7 @@ class App extends Component {
         data: null,
         num: null,
         mdname: null,
+        mdcont: null,
       }
     this.hopla = hopla.bind(this)
   }
@@ -36,7 +37,8 @@ class App extends Component {
     console.log(`./md_files/${md_name}`);
     fetch(require(`./md_files/${md_name}`))
     .then(res => res.text())
-    .then( data => console.log(data) )
+    .then( data => this.setState({ mdcont: data }) )
+    // .then( data => console.log(data) )
 
     return this.setState(state => ({
       num: state.num + 1,
@@ -51,10 +53,10 @@ class App extends Component {
   }
 
   render() {
-    const { post } = this.state
+    const post = this.state.mdcont ? this.state.mdcont : 'Click on link'
     return (
       <div className="container">
-        <button onClick={this.testfn}>
+        <button>
           {this.state.num ? `${this.state.num} ${this.state.mdname} `
             : 0}
         </button>
