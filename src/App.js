@@ -18,20 +18,19 @@ class App extends Component {
     this.handleKeyClick = handleKeyClick.bind(this)
   }
   // arrow func to garantee this
-  testfn = (md_name) => {
-    this.setState({num: this.state.num + 1})
-    const name = this.state.mdname.concat(' / '+md_name)
-    console.log(this.props)
+  testfn = (md_name, e) => {
+    this.setState({ num: this.state.num + 1 })
+    const name = this.state.mdname.concat(' / ' + md_name)
+    console.log(e.target)
 
     fetch(require(`./md_files/${md_name}`))
       .then(res => res.text())
-      .then( data => this.setState({ mdcont: data }) )
+      .then(data => this.setState({ mdcont: data }))
 
     return this.setState(state => ({
       num: state.num,
-      mdname: this.state.mdname.length > 0 ? name : md_name
-    }));
-
+      mdname: this.state.mdname.length > 0 ? name : md_name,
+    }))
   }
 
   render() {
@@ -39,11 +38,10 @@ class App extends Component {
     return (
       <div>
         <p className="history">
-          {this.state.num ? `${this.state.num} ${this.state.mdname} `
-            : 0}
+          {this.state.num ? `${this.state.num} ${this.state.mdname} ` : 0}
         </p>
         <div className="container">
-          <Link onClick={(this.testfn,this.handleKeyClick)} isClickedPops={this.handleKeyClick} />
+          <Link onClick={this.testfn} isClickedPops={this.handleKeyClick} />
           <div className="markdown-body">
             <ReactMarkdown source={post} escapeHtml={false} />
           </div>
@@ -55,4 +53,3 @@ class App extends Component {
 }
 
 export default App
-
