@@ -9,9 +9,7 @@
     <button id="grid8helper" onclick="output();">OK</button>
   </fieldset>
 </form>
-<div id="gridSys8Render">
-  <!-- <script>window.onload = console.log(showRes);</script> -->
-</div>
+<div id="gridSys8Render"></div>
 
 ## Formations
 

@@ -1,13 +1,14 @@
+// to parent comp -> import TodoApp from './Test'
 // https://fr.reactjs.org/#an-application
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 // class TodoApp extends React.Component {
 class TodoApp extends Component {
   constructor(props) {
-    super(props);
-    this.state = { items: [], text: '' };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    super(props)
+    this.state = { items: [], text: '' }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   render() {
@@ -16,39 +17,35 @@ class TodoApp extends Component {
         <h3>À faire</h3>
         <TodoList items={this.state.items} />
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="new-todo">
-            Que faut-il faire ?
-          </label>
+          <label htmlFor="new-todo">Que faut-il faire ?</label>
           <input
             id="new-todo"
             onChange={this.handleChange}
             value={this.state.text}
           />
-          <button>
-            Ajouter #{this.state.items.length + 1}
-          </button>
+          <button>Ajouter #{this.state.items.length + 1}</button>
         </form>
       </div>
-    );
+    )
   }
 
   handleChange(e) {
-    this.setState({ text: e.target.value });
+    this.setState({ text: e.target.value })
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
     if (!this.state.text.length) {
-      return;
+      return
     }
     const newItem = {
       text: this.state.text,
-      id: Date.now()
-    };
+      id: Date.now(),
+    }
     this.setState(state => ({
       items: state.items.concat(newItem),
-      text: ''
-    }));
+      text: '',
+    }))
   }
 }
 class TodoList extends React.Component {
@@ -60,9 +57,8 @@ class TodoList extends React.Component {
           <li key={item.id}>{item.text}</li>
         ))}
       </ul>
-    );
+    )
   }
 }
 
 export default TodoApp
-

@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown'
 import './css/App.css'
 import './css/github.css'
 import Link from './Linktomd'
-import TodoApp from './Test'
 import handleKeyClick from './func'
 
 class App extends Component {
@@ -37,13 +36,20 @@ class App extends Component {
       mdname: this.state.mdname.length > 0 ? name : md_name,
     }))
   }
-
+  componentDidMount() {
+    const script = document.createElement('script')
+    script.src = './assets/scripts/mult_n.js'
+    // script.async = true
+    document.body.appendChild(script)
+  }
   render() {
     const post = this.state.mdcont ? this.state.mdcont : 'Click on links'
     return (
       <div>
         <p className="history">
-          {this.state.num ? `${this.state.num} ${this.state.mdname} ` : 0}
+          {this.state.num
+            ? `visited link: ${this.state.num} ${this.state.mdname} `
+            : 'visited link…'}
         </p>
         <div className="container">
           <Link onClick={this.testfn} isClickedPops={this.handleKeyClick} />
@@ -51,7 +57,6 @@ class App extends Component {
             <ReactMarkdown source={post} escapeHtml={false} />
           </div>
         </div>
-        <TodoApp />
       </div>
     )
   }
