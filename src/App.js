@@ -4,15 +4,6 @@ import './App.css'
 import './css/github.css'
 import Link from './Linktomd'
 
-function hopla(mdname) {
-  const readmePath = require(`./md_files/${mdname}`)
-  fetch(readmePath)
-    .then(response => response.text())
-    .then(data => console.log(data))
-    // .then( data => this.setState({ data }) )
-    // .then(console.log('Ok!!!!!!!!!!!!'))
-}
-
 class App extends Component {
   constructor(props) {
     super(props)
@@ -23,7 +14,6 @@ class App extends Component {
         mdname: [],
         mdcont: null,
       }
-    this.hopla = hopla.bind(this)
   }
   // arrow func to garantee this
   testfn = (md_name) => {
@@ -41,11 +31,6 @@ class App extends Component {
 
   }
 
-  handleLinkClick(link) {
-    console.log(link, 'clicked')
-    hopla(link)
-  }
-
   render() {
     const post = this.state.mdcont ? this.state.mdcont : 'Click on links'
     return (
@@ -55,7 +40,6 @@ class App extends Component {
             : 0}
         </p>
         <div className="container">
-          {/* <Link onClick={this.handleLinkClick} /> */}
           <Link onClick={this.testfn} />
           <div className="markdown-body">
             <ReactMarkdown source={post} escapeHtml={false} />
