@@ -8,32 +8,36 @@
 }
 /* END surcharge github styles */
 
+// link styles
 .container {
   display: flex;
   flex-wrap: wrap;
+  &>ul {
+    padding: 0;
+    &>li {
+      margin-right: 0.4em;
+      list-style: none;
+      &>a {
+        display: block;
+        margin-bottom: 8px;
+        background-color: #ff7200;
+        padding: 15px 8px;
+        color: #fff;
+        font-family: sans-serif;
+        text-decoration: none;
+        transition: background-color .1s;
+        &:hover,&.actif {
+          text-decoration: underline;
+          background-color: #0B82E9;
+        }
+      }
+    }
+  }
 }
-.container > ul {
-  padding: 0;
-}
-.container > ul >li {
-  margin-right: 0.4em;
-  list-style: none;
-}
-.container > ul > li > a {
-  display: block;
-  margin-bottom: 8px;
-  background-color: #ff7200;
-  padding: 15px 8px;
-  color: #fff;
-  font-family: sans-serif;
-  text-decoration: none;
-  transition: background-color .1s;
-}
-.container > ul > li > a:hover,
-.container > ul > li > a.actif {
-  text-decoration: underline;
-  background-color: #0B82E9;
-}
+
+// .container > ul > li > a:hover,
+// .container > ul > li > a.actif {
+// }
 
 /* http://stephen.io/mediaqueries/#iPad iPad in portrait & landscape */
 /* @media only screen
@@ -86,3 +90,17 @@ and (max-width : 1250px) {
   background-color: #ff7200;
 }
 
+/* css CRA */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
