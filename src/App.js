@@ -4,6 +4,8 @@ import './css/App.css'
 import './css/github.css'
 import Link from './Linktomd'
 import source from './md_files/grids.md'
+import TodoApp from './Test';
+
 const markdownContext = require.context('./md_files', false, /\.md$/);
 console.log(markdownContext)
 console.log(markdownContext.keys())
@@ -28,6 +30,7 @@ class App extends Component {
     const { post } = this.state;
     return (
       <div className="container">
+        <TodoApp  />
         <Link onClick={this.handleLinkClick} />
         <div className="markdown-body">
           <ReactMarkdown source={post} escapeHtml={false} />
