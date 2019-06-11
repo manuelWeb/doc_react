@@ -16,42 +16,40 @@ function hopla(mdname) {
   fetch(readmePath)
     .then(response => response.text())
     .then(data => console.log(data))
-    .then(console.log('Ok!!!!!!!!!!!!'))
-  // .then(data => this.setState({ data }))
+    // .then( data => this.setState({ data }) )
+    // .then(console.log('Ok!!!!!!!!!!!!'))
 }
 
 class App extends Component {
-  state = {
-    post: null,
-    mdtxt: "je suis mdtxt pour l'instant",
-  }
   constructor(props) {
     super(props)
+      this.state = {
+        post: null,
+        data: null,
+        num: null
+      }
     this.hopla = hopla.bind(this)
   }
-  // componentDidMount() {
-  //   fetch(source)
-  //     .then(res => res.text())
-  //     .then(post => this.setState((state) => ({ ...state, post })))
-  //     .catch((err) => console.error(err));
-  // }
-  testfn({ ...state }) {
-    // const { mdtxt } = this.state
-    // mdtxt = 'klgjlfjdsjmrgjtjzo^yjtr'
-    // return this.state.mdtxt
-    // this.setState({ mdtxt })
-    console.log(state.mdtxt)
+  // arrow func to garantee this
+  testfn = () => {
+    fetch(require(`./md_files/grids.md`))
+    .then(res => res.text())
+    .then( data => console.log(data) )
+    return this.setState(state => ({
+      num: state.num + 1
+    }));
   }
+
   handleLinkClick(link) {
     console.log(link, 'clicked')
     hopla(link)
   }
+
   render() {
-    const { post, mdtxt } = this.state
-    console.log(mdtxt)
+    const { post } = this.state
     return (
       <div className="container">
-        <button onClick={this.testfn}>Test State show clg</button>
+        <button onClick={this.testfn}>{this.state.num ? this.state.num : 0}</button>
         <Link onClick={this.handleLinkClick} />
         <div className="markdown-body">
           <ReactMarkdown source={post} escapeHtml={false} />
@@ -62,3 +60,10 @@ class App extends Component {
 }
 
 export default App
+
+// componentDidMount() {
+//   fetch(source)
+//     .then(res => res.text())
+//     .then(post => this.setState((state) => ({ ...state, post })))
+//     .catch((err) => console.error(err));
+// }
