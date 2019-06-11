@@ -18,7 +18,7 @@ class App extends Component {
   // arrow func to garantee this
   testfn = (md_name) => {
     this.setState({num: this.state.num + 1})
-    const name = this.state.mdname ? this.state.mdname.concat(' / '+md_name) : this.state.mdname
+    const name = this.state.mdname.concat(' / '+md_name)
     console.log(name)
     fetch(require(`./md_files/${md_name}`))
       .then(res => res.text())
@@ -26,7 +26,7 @@ class App extends Component {
 
     return this.setState(state => ({
       num: state.num,
-      mdname: name
+      mdname: this.state.mdname.length > 0 ? name : md_name
     }));
 
   }
