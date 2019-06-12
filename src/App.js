@@ -15,7 +15,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      post: null,
+      md: null,
     }
     this.handleLinkClick = this.handleLinkClick.bind(this)
   }
@@ -26,18 +26,20 @@ class App extends Component {
       .catch((err) => console.error(err));
   }
   handleLinkClick(link) {
-    console.log(`./md_file/${link}`, 'clicked', `this:${this}`)
-    fetch(require(`./md_file/${link}`))
+    console.log(`./md_files/${link}`, 'clicked', `this:${this}`)
+    fetch(require(`./md_files/${link}`))
       .then(resp => resp.text())
+      .then(md => this.setState((state) => ({ ...state, md })))
       .then(md=>console.log(md))
+      .catch((err) => console.error(err));
   }
   render () {
-    const { post } = this.state;
+    const { md } = this.state;
     return (
       <div className="container">
         <Link onClick={this.handleLinkClick} />
         <div className="markdown-body">
-          <ReactMarkdown source={post} escapeHtml={false} />
+          <ReactMarkdown source={md} escapeHtml={false} />
         </div>
       </div>
     )
