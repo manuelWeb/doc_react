@@ -22,7 +22,6 @@ class App extends Component {
     this.setState({ num: this.state.num + 1 })
     this.setState({ clickedLink: e.target })
     const name = this.state.mdname.concat(' / ' + md_name)
-    console.log(e.target)
     e.target.className === 'default'
       ? (e.target.className = 'actif')
       : (e.target.className = 'default')
@@ -44,7 +43,9 @@ class App extends Component {
   }
 
   render() {
-    const post = this.state.mdcont ? this.state.mdcont : 'Click on links'
+    const post = this.state.mdcont ? this.state.mdcont : fetch(require('./md_files/TOFIX.md'))
+        .then(res => res.text())
+        .then(data => this.setState({ mdcont: data }))
     return (
       <div>
         <p className="history">
@@ -59,7 +60,6 @@ class App extends Component {
             <ReactMarkdown source={post} escapeHtml={false} />
           </div>
         </div>
-        <div ref={el => (this.instance = el)} />
       </div>
     )
   }
