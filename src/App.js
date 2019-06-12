@@ -20,20 +20,26 @@ class App extends Component {
     this.handleLinkClick = this.handleLinkClick.bind(this)
   }
   load() {
-    fetch(source)
-      .then(res => res.text())
-      .then(post => this.setState((state) => ({ ...state, post })))
-      .catch((err) => console.error(err));
+    setTimeout(() => {
+      fetch('https://api.aladhan.com/timingsByCity?city=france&country=US&method=2')
+        .then(res => res.text())
+        .then(post => this.setState((state) => ({ ...state, post })))
+        .catch((err) => console.error(err));
+    }, 800);
   }
   handleLinkClick(link) {
-    console.log(`./md_file/${link}`, 'clicked', `this:${this}`)
-    fetch(`./md_file/${link}`).then(resp => resp.text()).then(md=>console.log(md))
+    console.log(`./md_file/${link}`, 'clicked', 'this:', this)
+    fetch(require(`./md_files/${link}`))
+      .then(res => res.text())
+      .then(md => this.setState({ post: md }) )
+      .then(md => console.log(md) )
   }
   render () {
     const { post } = this.state;
     return (
       <div className="container">
-        <Link onClick={this.handleLinkClick} />
+        {/* <Link onClick={this.handleLinkClick} /> */}
+        <Link onClick={ (i) => {this.handleLinkClick(i);this.load()} } />
         <div className="markdown-body">
           <ReactMarkdown source={post} escapeHtml={false} />
         </div>

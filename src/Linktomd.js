@@ -14,7 +14,7 @@ const Link = ({onClick}) => (
     {listLink.map((item) => (
       <li key={item.id}>
         <a
-          href={`link: ${item.link}`}
+          href={`#filename:~${item.link}`}
           onClick={() => onClick(item.link)}
         >
         {item.text}
