@@ -12,17 +12,24 @@ console.log(markdownContext.keys())
 
 
 class App extends Component {
-  state = {
-    post: null,
+  constructor(props){
+    super(props)
+    this.state = {
+      post: null,
+    }
+    this.handleLinkClick = this.handleLinkClick.bind(this)
   }
-  componentDidMount() {
+  load() {
     fetch(source)
       .then(res => res.text())
       .then(post => this.setState((state) => ({ ...state, post })))
       .catch((err) => console.error(err));
   }
-  handleLinkClick (link) {
-    console.log(link, 'clicked')
+  handleLinkClick(link) {
+    console.log(`./md_file/${link}`, 'clicked', `this:${this}`)
+    fetch(require(`./md_file/${link}`))
+      .then(resp => resp.text())
+      .then(md=>console.log(md))
   }
   render () {
     const { post } = this.state;
