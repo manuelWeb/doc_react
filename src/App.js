@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown'
-import './css/App.css'
-import './css/github.css'
+import './css/App.scss'
+import './css/github.scss'
 import Link from './Linktomd'
 import handleKeyClick from './func'
 
@@ -22,7 +22,7 @@ class App extends Component {
     this.setState({ num: this.state.num + 1 })
     this.setState({ clickedLink: e.target })
     const name = this.state.mdname.concat(' / ' + md_name)
-    console.log(e.target.className)
+    console.log(e.target)
     e.target.className === 'default'
       ? (e.target.className = 'actif')
       : (e.target.className = 'default')
@@ -38,10 +38,11 @@ class App extends Component {
   }
   componentDidMount() {
     const script = document.createElement('script')
-    script.src = './assets/scripts/mult_n.js'
+    script.src = 'http://www.macfly.webdesignord.fr/web_project/Documentation/assets/scripts/mult_n.js'
     // script.async = true
     document.body.appendChild(script)
   }
+
   render() {
     const post = this.state.mdcont ? this.state.mdcont : 'Click on links'
     return (
@@ -52,11 +53,13 @@ class App extends Component {
             : 'visited link…'}
         </p>
         <div className="container">
-          <Link onClick={this.testfn} isClickedPops={this.handleKeyClick} />
+          {/* <Link onClick={ this.testfn } isClickedProps={this.handleKeyClick} /> */}
+          <Link onClick={ this.testfn } isClickedProps={ this.state.clickedLink } />
           <div className="markdown-body">
             <ReactMarkdown source={post} escapeHtml={false} />
           </div>
         </div>
+        <div ref={el => (this.instance = el)} />
       </div>
     )
   }

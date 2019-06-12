@@ -20,15 +20,17 @@ const listLink = [
   { id: 7, text: 'Sketch Library & Zeplin', link: 'sketch-library.md' },
   { id: 8, text: 'Sketch Responsive', link: 'sketch-responsive.md' },
 ]
-const Link = ({ onClick }) => {
+const Link = ({onClick,isClickedProps}) => {
   return (
+    console.log(isClickedProps),
     <ul>
       {listLink.map(item => (
         <li key={item.id}>
           <a
             // className={this.state.clickedLink === 'null' ? 'default' : 'actif'}
-            className="default"
-            href={`#link: ${item.link}`}
+            // className="default"
+            // className={this.props.isClickedProps}
+            href={`#link:~${item.link}`}
             onClick={e => onClick(item.link, e)}
           >
             {item.text}
