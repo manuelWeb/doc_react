@@ -1,4 +1,4 @@
-# Sketch Library
+# Sketch Library & Zeplin
 
 ## Bibliothèque partagée avec contrôle de versions
 
@@ -6,12 +6,12 @@
 
 - Télécharger [GitHub Desktop](https://desktop.github.com/).
 - Créer un compte.
-- À partir de là, il me faut votre nom d'utilisateur ou votre adresse mail renseigné lors de la création de votre compte GitHub pour que je puisse vous inviter à collaborer sur la bibliothèque sketch.
-- Votre mot de passe reste confidentiel.
-- Une fois que vous m'avez donné votre identifiant GitHub et que je vous ai ajouté comme collaborateur :
-- accéder à la boite mail que vous avez utilisé lors de la création de votre compte GitHub.
-- Ouvrir le mail Expéditeur : Becquet<noreply@github.com> > cliquer sur le bouton “View invitation”.
-- Sur la page https://github.com/Becquet/sketch_shared_lib > Accept invitation
+- À partir de là, il me faut votre nom d'utilisateur et (ou) votre adresse mail renseigné lors de la création de votre compte GitHub pour que je puisse vous inviter à collaborer sur la bibliothèque sketch.
+- Votre mot de passe est et doit rester confidentiel.
+- Une fois que vous m'avez donné votre identifiant Git et que je vous ai ajouté comme collaborateur :
+  - accéder à la boite mail que vous avez utilisé lors de la création de votre compte GitHub.
+  - Ouvrir le mail Expéditeur : Becquet<noreply@github.com> > cliquer sur le bouton “View invitation”.
+  - Sur la page https://github.com/Becquet/sketch_shared_lib > Accept invitation
 
 ### 2-Configurer GitHub Desktop
 

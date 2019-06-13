@@ -11,7 +11,7 @@ const listLink = [
   {id: 8, text: 'Sketch Responsive', link: 'sketch-responsive.md'}
 ]
 const Link = ({onClick, e, isActif}) =>{
-  console.log(`clicked:${isActif === '' ? 0 : isActif}`)
+  // console.log(`clicked:${isActif === '' ? 0 : isActif}`)
   return (
     <ul>
       {listLink.map((item) => (
