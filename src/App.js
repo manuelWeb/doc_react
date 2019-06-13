@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown'
 import './css/App.css'
 import './css/github.css'
 import Link from './Linktomd'
-import source from './md_files/grids.md'
 const markdownContext = require.context('./md_files', false, /\.md$/);
 console.log(markdownContext)
 console.log(markdownContext.keys())
@@ -38,7 +37,6 @@ class App extends Component {
     const { post } = this.state;
     return (
       <div className="container">
-        {/* <Link onClick={this.handleLinkClick} /> */}
         <Link onClick={ (i) => {this.handleLinkClick(i);this.load()} } />
         <div className="markdown-body">
           <ReactMarkdown source={post} escapeHtml={false} />
