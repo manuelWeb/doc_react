@@ -10,15 +10,15 @@ const listLink = [
   {id: 7, text: 'Sketch Library & Zeplin', link: 'sketch-library.md'},
   {id: 8, text: 'Sketch Responsive', link: 'sketch-responsive.md'}
 ]
-const Link = ({onClick,e,isAct}) =>{
-  console.log('is clicked')
+const Link = ({onClick, e, isActif}) =>{
+  console.log(`clicked:${isActif === '' ? 0 : isActif}`)
   return (
     <ul>
       {listLink.map((item) => (
         <li key={item.id}>
           <a
-            className={isAct === item.link ? 'actif' : 'default'}
-            href={`#filename:~${item.link}`}
+            className={isActif === item.link ? 'actif' : 'default'}
+            href={`./#filename:~${item.link}/`}
             onClick={(e) => onClick(item.link,e)}
           >
           {item.text}

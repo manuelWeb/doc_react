@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown'
 import './styles/App.scss'
 import './styles/github.scss'
+import './styles/styles.scss'
 import Link from './Linktomd'
 
 class App extends Component {
@@ -9,9 +10,19 @@ class App extends Component {
     super(props)
     this.state = {
       post: null,
-      isClick: null
+      isClick: ''
     }
     // this.handleLinkClick = this.handleLinkClick.bind(this)
+  }
+
+  saveStateToLocalStorage = () => {
+    localStorage.setItem('state', JSON.stringify(this.state))
+  }
+  componentDidMount() {
+    const state = localStorage.getItem('state')
+    if (state) {
+      this.setState(JSON.parse(state))
+    }
   }
   load(link) {
     console.log(`./md_file/${link}`, 'clicked', 'this:', this)
@@ -26,7 +37,8 @@ class App extends Component {
     fetch(`./md_files/${link}`)
       .then(res => res.text())
       .then(md => this.setState({ post: md }) )
-    this.setState({isClick: link})
+    // add link state
+    this.setState({isClick: link},this.saveStateToLocalStorage)
   }
 
   render () {
@@ -34,8 +46,7 @@ class App extends Component {
     console.log(post ? 'true' : 'false')
     return (
       <div className="container">
-        {/* <Link onClick={ (i) => {this.handleLinkClick(i);this.load('TOFIX.md')} } /> */}
-        <Link onClick={ (i,e) => {this.handleLinkClick(i,e)} } isAct={this.state.isClick} />
+        <Link onClick={ (i,e) => {this.handleLinkClick(i,e)} } isActif={this.state.isClick} />
         <div className="markdown-body">
           <ReactMarkdown source={post} escapeHtml={false} />
         </div>
