@@ -9,30 +9,33 @@ class App extends Component {
     super(props)
     this.state = {
       post: null,
+      isClick: null
     }
-    this.handleLinkClick = this.handleLinkClick.bind(this)
+    // this.handleLinkClick = this.handleLinkClick.bind(this)
   }
-  load() {
-    setTimeout(() => {
-      fetch('https://api.aladhan.com/timingsByCity?city=usa&country=US&method=2')
-        .then(res => res.text())
-        .then(post => this.setState((state) => ({ ...state, post })))
-        .catch((err) => console.error(err));
-    }, 800);
-  }
-  handleLinkClick(link) {
+  load(link) {
     console.log(`./md_file/${link}`, 'clicked', 'this:', this)
+    fetch(`./md_files/${link}`)
+    .then(res => res.text())
+    .then(md => this.setState({ post: md }) )
+    .catch((err) => console.error(err));
+  }
+
+  handleLinkClick(link,e) {
+    console.log(e.target,link);
     fetch(`./md_files/${link}`)
       .then(res => res.text())
       .then(md => this.setState({ post: md }) )
-      .then(md => console.log(md) )
+    this.setState({isClick: link})
   }
+
   render () {
-    const { post } = this.state
+    const post = this.state.post === null ? this.load('TOFIX.md') : this.state.post
+    console.log(post ? 'true' : 'false')
     return (
       <div className="container">
-        {/* <Link onClick={ (i) => {this.handleLinkClick(i);this.load()} } /> */}
-        <Link onClick={ (i) => {this.handleLinkClick(i)} } />
+        {/* <Link onClick={ (i) => {this.handleLinkClick(i);this.load('TOFIX.md')} } /> */}
+        <Link onClick={ (i,e) => {this.handleLinkClick(i,e)} } isAct={this.state.isClick} />
         <div className="markdown-body">
           <ReactMarkdown source={post} escapeHtml={false} />
         </div>

@@ -31,5 +31,5 @@
       [minimum size] + ([maximum size] - [minimum size]) *
       ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))
     );
-}
+  }
 ```
