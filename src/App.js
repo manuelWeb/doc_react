@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown'
-import './assets/styles/App.scss'
-import './assets/styles/github.scss'
+import './styles/App.scss'
+import './styles/github.scss'
 import Link from './Linktomd'
 const markdownContext = require.context('./md_files', false, /\.md$/);
 console.log(markdownContext)
