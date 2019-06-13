@@ -70,3 +70,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### markdown
 
 [ import multiple markdown source --medium article ]( https://medium.com/@shawnstern/importing-multiple-markdown-files-into-a-react-component-with-webpack-7548559fce6f )
+
+### load multiple files at once use Webpack
+
+```javascript
+const markdownContext = require.context('./md_files', false, /\.md$/);
+console.log(markdownContext)
+console.log(markdownContext.keys())
+```

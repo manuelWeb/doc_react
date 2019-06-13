@@ -3,9 +3,6 @@ import ReactMarkdown from 'react-markdown'
 import './styles/App.scss'
 import './styles/github.scss'
 import Link from './Linktomd'
-const markdownContext = require.context('./md_files', false, /\.md$/);
-console.log(markdownContext)
-console.log(markdownContext.keys())
 
 class App extends Component {
   constructor(props){
@@ -31,7 +28,7 @@ class App extends Component {
       .then(md => console.log(md) )
   }
   render () {
-    const { post } = this.state;
+    const { post } = this.state
     return (
       <div className="container">
         {/* <Link onClick={ (i) => {this.handleLinkClick(i);this.load()} } /> */}
