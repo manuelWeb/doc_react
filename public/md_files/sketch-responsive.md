@@ -4,8 +4,8 @@
 
 <form onsubmit="return false">
   <fieldset>
-    <label>Grab your value :</label>
-    <input id="gridSys8Value" type="text/html" />
+    <label>Grab your value:</label>
+    <input id="gridSys8Value" type="text" />
     <button id="grid8helper" onclick="output();">OK</button>
   </fieldset>
 </form>

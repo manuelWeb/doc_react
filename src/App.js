@@ -21,11 +21,9 @@ class App extends Component {
   componentDidMount() {
     const state = localStorage.getItem('state')
     const stor = JSON.parse(state)
-    console.log(`stor.isClick:${stor.isClick}`)
+    console.log(`stor.isClick:${stor ? stor.isClick : null}`)
     if (state) {
       this.setState(JSON.parse(state))
-      // alert(localStorage.getItem('state'))
-
     }
   }
   load(link) {

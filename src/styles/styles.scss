@@ -1,10 +1,20 @@
 /* surcharge github markdown styles */
 .markdown-body {
-  min-width: 638px;
+  // min-width: 638px;
+  min-width: unset;
   margin: 0;
-  padding: 20px;
+  padding: 1.25em;
   border-color: #fafafa;
   background-color: #fefefe;
+}
+.markdown-body table {
+  display: table;
+  @media screen and (max-width: 375px) {
+    font-size: 4vw;
+  }
+  th, td {
+    padding: 0.5em;
+  }
 }
 /* END surcharge github styles */
 
@@ -14,25 +24,25 @@
 }
 .container > ul {
   padding: 0;
+  & > li {
+    margin-right: 0.4em;
+    list-style: none;
+    & > a {
+      display: inherit;
+      background-color: #ff7200;
+      padding: 15px 8px;
+      color: #fff;
+      font-family: sans-serif;
+      text-decoration: none;
+      transition: background-color 0.1s;
+    }
+  }
 }
-.container > ul >li {
-  margin-right: 0.4em;
-  list-style: none;
-}
-.container > ul > li > a {
-  display: block;
-  margin-bottom: 8px;
-  background-color: #ff7200;
-  padding: 15px 8px;
-  color: #fff;
-  font-family: sans-serif;
-  text-decoration: none;
-  transition: background-color .1s;
-}
+
 .container > ul > li > a:hover,
 .container > ul > li > a.actif {
   text-decoration: underline;
-  background-color: #0B82E9;
+  background-color: #0b82e9;
 }
 
 /* http://stephen.io/mediaqueries/#iPad iPad in portrait & landscape */
@@ -43,22 +53,35 @@ and (min-device-width : 375px)
 and (max-device-width : 667px) {
   .container {flex-direction: row;}
 } */
-@media only screen
-and (min-width : 375px)
-and (max-width : 1250px) {
-  .container > ul {display: flex;}
-  .container > ul > li {display: flex; text-align: center;}
-  .container > ul > li:last-child {margin-right: 0;}
+@media only screen and (min-width: 375px) and (max-width: 1250px) {
+  .container > ul {
+    display: flex;
+  }
+  .container > ul > li {
+    display: flex;
+    text-align: center;
+  }
+  .container > ul > li:last-child {
+    margin-right: 0;
+  }
 }
 
 /* form */
 .markdown-body fieldset {
+  display: flex; flex-wrap: wrap;
   margin: 0;
   padding: 0;
   border: none;
+  input {
+    flex: 1 1 0%;
+    min-width: 70px; /* WTF @see Alex */
+    @media screen and (max-width: 375px) {
+      max-width: 293px;
+    }
+  }
 }
 .markdown-body label {
-  display: block;
+  width: 100%;
   color: #ff7200;
 }
 .markdown-body input,
@@ -72,9 +95,6 @@ and (max-width : 1250px) {
   border: 1px solid #ff7200;
   font-size: 24px;
 }
-.markdown-body input:focus {
-  outline: none;
-}
 .markdown-body button {
   height: 48px;
   margin-left: -5px;
@@ -85,4 +105,3 @@ and (max-width : 1250px) {
   color: #ffffff;
   background-color: #ff7200;
 }
-
