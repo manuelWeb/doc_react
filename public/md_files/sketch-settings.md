@@ -77,7 +77,7 @@ HEADING/$1/FF#1/Left/Black/--regular
 ### Pref > keyboard > app short key
 
 | Command Name        | keybinding  | plugin   |
-| ------------------: | : --------- |          |
+| ------------------: |: ---------  |: ----    |
 | Round to Pixel      | ⌘ ⌥ K       |          |
 | Uppercase           | ⌘ ⇧ U       |          |
 | Lowercase           | ⌘ L         |          |

@@ -29,21 +29,23 @@
     list-style: none;
     & > a {
       display: inherit;
-      background-color: #ff7200;
       padding: 15px 8px;
-      color: #fff;
+      color: #666;
       font-family: sans-serif;
       text-decoration: none;
-      transition: background-color 0.1s;
+      background-image: linear-gradient(to top, #ff7200, #ff7200);
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: 100% 0px;
+      transition: background-size .25s, color .25s;
+      &.actif, &:hover {
+        color: #ff7200;
+        background-size: 100% 8px;
+      }
     }
   }
 }
 
-.container > ul > li > a:hover,
-.container > ul > li > a.actif {
-  text-decoration: underline;
-  background-color: #0b82e9;
-}
 
 
 @media only screen and (min-width: 375px) and (max-width: 1250px) {
@@ -89,23 +91,24 @@
   }
 }
 
-.markdown-body input,
-.markdown-body button {
-  vertical-align: middle;
+.markdown-body {
+  input, button {
+    border: 1px solid #ff7200;
+  }
+  input {
+    height: 48px;
+    padding-left: 8px;
+    border-radius: 4px 0 0 4px;
+    font-size: 24px;
+  }
+  button {
+    // height: 48px; no necessary thanks flex
+    padding: 0;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #ff7200;
+  }
 }
-.markdown-body input {
-  height: 48px;
-  padding-left: 8px;
-  border-radius: 4px 0 0 4px;
-  border: 1px solid #ff7200;
-  font-size: 24px;
-}
-.markdown-body button {
-  height: 48px;
-  padding: 0 16px;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #ff7200;
-}
+
