@@ -3,15 +3,13 @@
 ## Help 8pt Grid Sys
 
 <form onsubmit="return false">
-  <fieldset>
+  <div>
     <label>Grab your value:</label>
     <input id="gridSys8Value" type="text" />
     <button id="grid8helper" onclick="output();">OK</button>
-  </fieldset>
+    <span id="gridSys8Render" class="result"> </span>
+  </div>
 </form>
-<div id="gridSys8Render">
-  <!-- <script>window.onload = console.log(showRes);</script> -->
-</div>
 
 ## Formations
 

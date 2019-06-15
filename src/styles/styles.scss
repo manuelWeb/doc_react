@@ -61,18 +61,29 @@
 
 /* form */
 .markdown-body form {
-  display: flex;
-  fieldset {
-    margin: 0;
-    padding: 0;
-    border: none;
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0; padding: 0; border: none;
+    max-width: 368px;
     label {
-      flex: 1 1 0;
+      // grow ✓ shrink 𐄂 basis 100% (init size before remaining space is redistributed)
+      flex: 1 0 100%;
       color: #ff7200;
     }
     input {
-      flex: 1 1 56px;
-      min-width: 312px; // diff ffx & ch
+      flex: 1;
+      min-width: 70px; // eq no-wrap
+    }
+    button {
+      min-width: 56px;
+    }
+    .result {
+      margin-left: 1em;
+      @media screen and (max-width: 375px) {
+        margin-left: 0;
+        width: 100%;
+      }
     }
   }
 }
@@ -90,7 +101,6 @@
 }
 .markdown-body button {
   height: 48px;
-  margin-left: -5px;
   padding: 0 16px;
   border: none;
   border-radius: 0 4px 4px 0;
