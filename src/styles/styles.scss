@@ -80,6 +80,7 @@
     }
     .result {
       margin-left: 1em;
+      align-self: flex-end;
       @media screen and (max-width: 375px) {
         margin-left: 0;
         width: 100%;
