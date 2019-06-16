@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown'
+import 'whatwg-fetch'
 import './styles/App.scss'
 import './styles/github.scss'
 import './styles/styles.scss'
