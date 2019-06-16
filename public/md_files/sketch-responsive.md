@@ -7,7 +7,7 @@
     <label>Grab your value:</label>
     <input id="gridSys8Value" type="text" />
     <button id="grid8helper"
-      onclick="output(document.getElementById('gridSys8Value').value,document.querySelector('#gridSys8Render'));">
+      onclick="output(document.getElementById('gridSys8Value').value,document.getElementById('gridSys8Render'));">
       OK
     </button>
     <span id="gridSys8Render" class="result"> </span>
