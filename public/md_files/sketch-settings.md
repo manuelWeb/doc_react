@@ -257,10 +257,6 @@ $1desk/$3/$4/white/$5
 
 ```
 
-## Remplacer mobi par desk sur un jeux complet de style
-
-![screen Style Master > Rename Text Styles](../medias/images/textStyle/styleMaster_deskToMobi.jpg)
-
 # Find and Replace
 
 ## trouver est remplacer du texte dans la page ou dans le document complet

@@ -38,7 +38,8 @@
       background-position: center bottom;
       background-size: 100% 0px;
       transition: background-size .25s, color .25s;
-      &.actif, &:hover {
+      &.actif,
+      &:hover, &:focus {
         color: #ff7200;
         background-size: 100% 8px;
       }
