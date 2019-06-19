@@ -1,6 +1,10 @@
 /* eslint-disable no-unused-vars */
 function isMulti8(num){
-  return num % 8 === 0 ? `${num} 👍 truthy` : `↓${num - (num % 8)} or ↑${num - (num % 8) + 8}`
+  // incompatible backtits on galaxie tab 3
+  // return num % 8 === 0 ? `${num} 👍 truthy` : `↓${num - (num % 8)} or ↑${num - (num % 8) + 8}`
+  const smaller = num - (num % 8)
+  const bigger = smaller + 8
+  return num % 8 === 0 ? num + '👍 truthy' : '↓' + smaller + 'or ↑' + bigger
 }
 // !important fn à charger dans le context du DOM
 // ES<5
