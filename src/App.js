@@ -11,22 +11,24 @@ class App extends Component {
     super(props)
     this.state = {
       post: null,
-      isClick: ''
+      idActif: ''
     }
     // this.handleLinkClick = this.handleLinkClick.bind(this)
   }
 
   saveStateToLocalStorage = () => {
-    localStorage.setItem('state', JSON.stringify(this.state))
+    // localStorage.setItem('state', JSON.stringify(this.state))
+    localStorage.setItem('state','post')
   }
-  componentDidMount() {
-    const state = localStorage.getItem('state')
-    const stor = JSON.parse(state)
-    console.log(`stor.isClick:${stor ? stor.isClick : null}`)
-    if (state) {
-      this.setState(JSON.parse(state))
-    }
-  }
+  // componentDidMount() {
+  //   const state = localStorage.getItem('state')
+  //   const stor = JSON.parse(state)
+  //   console.log(`stor.idActif:${stor ? stor.idActif : null}`)
+  //   if (state) {
+  //     this.setState(JSON.parse(state))
+  //   }
+  // }
+
   load(link) {
     console.log(`./md_file/${link}`, 'clicked', 'this:', this)
     fetch(`./md_files/${link}`)
@@ -35,23 +37,26 @@ class App extends Component {
     .catch((err) => console.error(err));
   }
 
-  handleLinkClick(link,e) {
-    console.log(e.target,link);
+  handleLinkClick(link,e,id) {
+    // console.log(link,e.target,id);
     fetch(`./md_files/${link}`)
       .then(res => res.text())
       .then(md => this.setState({ post: md },this.saveStateToLocalStorage) )
-    // add link state
-    this.setState({isClick: link},this.saveStateToLocalStorage)
+      // .then(md => this.setState({ post: md },this.saveStateToLocalStorage) )
+
+      // add link id to state
+    this.setState({idActif: id})
   }
 
   render () {
     // const post = this.state.post === null ? this.load('TOFIX.md') : this.state.post
     const {post} = this.state
-    // this.state.isClick
-    console.log(post ? 'true' : 'false')
+    const state = localStorage.getItem('post')
+    console.log(state);
+    // console.log(post ? 'true' : 'false')
     return (
       <div className="container">
-        <Link onClick={ (i,e) => {this.handleLinkClick(i,e)} } isActif={this.state.isClick} />
+        <Link onClick={ (i,e,id) => {this.handleLinkClick(i,e,id)} } id={this.state.idActif} />
         <div className="markdown-body">
           <ReactMarkdown source={post} escapeHtml={false} />
         </div>
