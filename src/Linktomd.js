@@ -13,17 +13,15 @@ const listLink = [
   { id: 6, text: 'Sketch Settings', link: 'sketch-settings.md' },
   { id: 7, text: 'Sketch Library & Zeplin', link: 'sketch-library.md' },
   { id: 8, text: 'Sketch Responsive', link: 'sketch-responsive.md' },
+  { id: 9, text: 'BEM', link: 'bem.md' },
 ]
 // const Link = ({ onClick, e, isActif }) => {
 const Link = ({ onClick, e, id }) => {
-  // console.log(`clicked:${isActif === '' ? 0 : isActif}`)
-  console.log(id);
   return (
     <ul>
       {listLink.map(item => (
         <li key={item.id}>
           <a
-            // className={isActif === item.link ? 'actif' : 'default'}
             className={id === item.id ? 'actif' : ''}
             href={`#filename:~${item.link}/`}
             onClick={e => {

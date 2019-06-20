@@ -18,7 +18,8 @@ class App extends Component {
 
   saveStateToLocalStorage = () => {
     // localStorage.setItem('state', JSON.stringify(this.state))
-    localStorage.setItem('state','post')
+    localStorage.setItem('post',this.state.post)
+    localStorage.setItem('id',this.state.idActif)
   }
   // componentDidMount() {
   //   const state = localStorage.getItem('state')
@@ -42,23 +43,22 @@ class App extends Component {
     fetch(`./md_files/${link}`)
       .then(res => res.text())
       .then(md => this.setState({ post: md },this.saveStateToLocalStorage) )
-      // .then(md => this.setState({ post: md },this.saveStateToLocalStorage) )
 
-      // add link id to state
-    this.setState({idActif: id})
+    // add link id to state then to localStorage
+    this.setState({idActif: id},this.saveStateToLocalStorage)
   }
 
   render () {
-    // const post = this.state.post === null ? this.load('TOFIX.md') : this.state.post
-    const {post} = this.state
-    const state = localStorage.getItem('post')
-    console.log(state);
-    // console.log(post ? 'true' : 'false')
+    const {post} = this.state ? this.state : localStorage.getItem('post')
+    // console.log(post ? 'true' : localStorage.getItem('post'))
     return (
       <div className="container">
-        <Link onClick={ (i,e,id) => {this.handleLinkClick(i,e,id)} } id={this.state.idActif} />
+        <Link
+          onClick={ (i,e,id) => {this.handleLinkClick(i,e,id)} }
+          id={this.state.idActif !== '' ? this.state.idActif : parseInt((localStorage.getItem('id'))) }
+        />
         <div className="markdown-body">
-          <ReactMarkdown source={post} escapeHtml={false} />
+          <ReactMarkdown source={post ? post : localStorage.getItem('post')} escapeHtml={false} />
         </div>
       </div>
     )
