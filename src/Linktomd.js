@@ -1,19 +1,22 @@
 import React from 'react'
+const Emoji = props => (
+  <span
+      className="emoji"
+      role="img"
+      aria-label={props.label ? props.label : ""}
+      aria-hidden={props.label ? "false" : "true"}
+  >
+      {props.symbol}
+  </span>
+
+);
 
 const listLink = [
-  { id: 1, text: 'Responsive vs Adaptative', link: 'RWDvsAdaptativeWD.md' },
-  { id: 2, text: 'Atomic Design Method', link: 'atomic_design_systeme_SK.md' },
-  { id: 3, text: 'Atomic Design exemples', link: 'atomic_design_exemples.md' },
-  {
-    id: 4,
-    text: 'Responsive design patterns',
-    link: 'responsiveDesignPatern.EMarcotte.md',
-  },
-  { id: 5, text: 'Grids up to date :)', link: 'grids.md' },
-  { id: 6, text: 'Sketch Settings', link: 'sketch-settings.md' },
-  { id: 7, text: 'Sketch Library & Zeplin', link: 'sketch-library.md' },
-  { id: 8, text: 'Sketch Responsive', link: 'sketch-responsive.md' },
-  { id: 9, text: 'BEM', link: 'bem.md' },
+  { id: 1, text: 'Atomic Design Method', link: 'atomic_design_systeme_SK.md' },
+  { id: 2, text: 'Atomic Design exemples', link: 'atomic_design_exemples.md' },
+  { id: 4, text: 'Grids out of date ', link: 'grids.md' },
+  { id: 5, text: '8pt Grid system', link: 'heightPtGridSys.md' },
+  { id: 6, text: 'BEM', link: 'bem.md' },
 ]
 // const Link = ({ onClick, e, isActif }) => {
 const Link = ({ onClick, e, id }) => {
@@ -28,7 +31,7 @@ const Link = ({ onClick, e, id }) => {
               onClick(item.link, e, item.id)
             }}
           >
-            {item.text}
+            {item.text}{item.id === 4 && <Emoji symbol="🙁" />}
           </a>
         </li>
       ))}
