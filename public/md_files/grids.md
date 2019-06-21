@@ -1,4 +1,15 @@
-# Becquet
+# Temps L
+
+## Break point
+
+- Desktop :
+  - total width 1152px
+  - offset 144px
+  - Numbers of Columns 12
+  - Gutter Width 12px
+  - Columns Width 84px
+  - Gutter Height 8px
+  - Row Height 5 x Gutter Height
 
 ## Typographic Grid Guide
 
