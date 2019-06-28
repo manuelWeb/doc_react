@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>icons/social/square-radius_5</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="link/social" fill-rule="nonzero">
+            <g id="icons/social/square-radius_5">
+                <g id="shape/fill/radius_5" fill="#BFBEC0">
+                    <path d="M5,0 L19,0 C21.7614237,-5.07265313e-16 24,2.23857625 24,5 L24,19 C24,21.7614237 21.7614237,24 19,24 L5,24 C2.23857625,24 2.11453371e-15,21.7614237 0,19 L0,5 C-3.38176876e-16,2.23857625 2.23857625,2.28362215e-15 5,0 Z" id="radius_5"></path>
+                </g>
+                <g id="icons/social/facebook" transform="translate(2.000000, 2.000000)" fill="#FFFFFF">
+                    <path d="M7.50560678,20 L11.2409669,20 L11.2434588,10 L14.6361824,9.99875 L15,6.5525 L11.2409669,6.5525 L11.2459507,4.8275 C11.2459507,3.92875 11.3070022,3.4475 12.5928233,3.4475 L14.9676053,3.4475 L14.9676053,0 L11.5624221,0 C8.26189883,0 7.50186893,1.71125 7.50186893,4.5225 L7.50560678,6.5525 L5,6.55375 L5,10 L7.50560678,10 L7.50560678,20 Z" id="color"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
