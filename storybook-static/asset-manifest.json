@@ -1,15 +1,16 @@
 {
   "files": {
     "main.css": "/main.css",
-    "main.js": "/main.5c662d0b0d05236eea2d.bundle.js",
+    "main.js": "/main.dfac6860429734938440.bundle.js",
     "main.css.map": "/main.css.map",
-    "main.js.map": "/main.5c662d0b0d05236eea2d.bundle.js.map",
-    "runtime~main.js": "/runtime~main.5c662d0b0d05236eea2d.bundle.js",
-    "runtime~main.js.map": "/runtime~main.5c662d0b0d05236eea2d.bundle.js.map",
-    "vendors~main.js": "/vendors~main.5c662d0b0d05236eea2d.bundle.js",
-    "vendors~main.js.map": "/vendors~main.5c662d0b0d05236eea2d.bundle.js.map",
+    "main.js.map": "/main.dfac6860429734938440.bundle.js.map",
+    "runtime~main.js": "/runtime~main.dfac6860429734938440.bundle.js",
+    "runtime~main.js.map": "/runtime~main.dfac6860429734938440.bundle.js.map",
+    "vendors~main.js": "/vendors~main.dfac6860429734938440.bundle.js",
+    "vendors~main.js.map": "/vendors~main.dfac6860429734938440.bundle.js.map",
     "iframe.html": "/iframe.html",
-    "precache-manifest.876b8d50a6c1bcd81a9fa1725ca16bbe.js": "/precache-manifest.876b8d50a6c1bcd81a9fa1725ca16bbe.js",
-    "service-worker.js": "/service-worker.js"
+    "precache-manifest.70af1d4c3ec7835dde57af22387e24ca.js": "/precache-manifest.70af1d4c3ec7835dde57af22387e24ca.js",
+    "service-worker.js": "/service-worker.js",
+    "static/media/tempsl_logo.1334fc61.svg": "/static/media/tempsl_logo.1334fc61.svg"
   }
 }
