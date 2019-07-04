@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "mixed.test.css",
+	"sources": [
+		"../../../../../node_modules/cdocparser/test/fixtures/mixed.test.scss"
+	],
+	"names": [],
+	"mappings": "AAAA;;;;GAIG"
+}

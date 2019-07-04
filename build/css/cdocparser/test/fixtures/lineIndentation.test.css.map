@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "lineIndentation.test.css",
+	"sources": [
+		"../../../../../node_modules/cdocparser/test/fixtures/lineIndentation.test.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "crlf.test.css",
+	"sources": [
+		"../../../../../node_modules/cdocparser/test/fixtures/crlf.test.scss"
+	],
+	"names": [],
+	"mappings": "AAAA;;;GAGG"
+}

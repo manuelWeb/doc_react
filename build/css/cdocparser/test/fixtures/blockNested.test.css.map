@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "blockNested.test.css",
+	"sources": [
+		"../../../../../node_modules/cdocparser/test/fixtures/blockNested.test.scss"
+	],
+	"names": [],
+	"mappings": "AAAA;;GAEG;AACH;;GAEG;AACH;;GAEG"
+}

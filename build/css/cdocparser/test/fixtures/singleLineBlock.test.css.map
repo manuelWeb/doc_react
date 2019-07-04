@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "singleLineBlock.test.css",
+	"sources": [
+		"../../../../../node_modules/cdocparser/test/fixtures/singleLineBlock.test.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,oCAAoC"
+}

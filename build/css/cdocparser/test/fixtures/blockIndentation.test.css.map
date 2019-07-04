@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "blockIndentation.test.css",
+	"sources": [
+		"../../../../../node_modules/cdocparser/test/fixtures/blockIndentation.test.scss"
+	],
+	"names": [],
+	"mappings": "AAAA;;;;GAIG"
+}

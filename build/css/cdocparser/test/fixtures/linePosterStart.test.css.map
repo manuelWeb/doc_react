@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "linePosterStart.test.css",
+	"sources": [
+		"../../../../../node_modules/cdocparser/test/fixtures/linePosterStart.test.scss"
+	],
+	"names": [],
+	"mappings": "AAGA,AAAA,QAAQ,CAAC;EACL,UAAU,EAAE,mDAAmD,GAClE"
+}

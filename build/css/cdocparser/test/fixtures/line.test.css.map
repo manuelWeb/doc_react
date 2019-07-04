@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "line.test.css",
+	"sources": [
+		"../../../../../node_modules/cdocparser/test/fixtures/line.test.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "linePoster.test.css",
+	"sources": [
+		"../../../../../node_modules/cdocparser/test/fixtures/linePoster.test.scss"
+	],
+	"names": [],
+	"mappings": ""
+}
