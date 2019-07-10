@@ -1,4 +1,7 @@
 /** @define App */
+.bgcGray {
+  background-color: #eee; }
+
 .App {
   text-align: center; }
 
@@ -13,7 +16,6 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #282c34;
   color: #fff;
   font-size: calc(10px + 2vmin); }
 

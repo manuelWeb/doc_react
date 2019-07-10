@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "lineIndentionBefore.test.css",
-	"sources": [
-		"../../../../../node_modules/cdocparser/test/fixtures/lineIndentionBefore.test.scss"
-	],
-	"names": [],
-	"mappings": ""
-}

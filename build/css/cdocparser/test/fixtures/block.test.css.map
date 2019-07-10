@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "block.test.css",
-	"sources": [
-		"../../../../../node_modules/cdocparser/test/fixtures/block.test.scss"
-	],
-	"names": [],
-	"mappings": "AAAA;;;;GAIG;AAEF;;;;IAIG"
-}

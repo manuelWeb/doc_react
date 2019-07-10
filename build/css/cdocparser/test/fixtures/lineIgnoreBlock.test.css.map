@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "lineIgnoreBlock.test.css",
-	"sources": [
-		"../../../../../node_modules/cdocparser/test/fixtures/lineIgnoreBlock.test.scss"
-	],
-	"names": [],
-	"mappings": ""
-}

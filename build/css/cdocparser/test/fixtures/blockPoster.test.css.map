@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "blockPoster.test.css",
-	"sources": [
-		"../../../../../node_modules/cdocparser/test/fixtures/blockPoster.test.scss"
-	],
-	"names": [],
-	"mappings": "AAAA;;GAEG;AAEH;;;IAGI;AAEJ;;GAEG"
-}

@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "custom-regex.test.css",
-	"sources": [
-		"../../../../../node_modules/cdocparser/test/fixtures/custom-regex.test.scss"
-	],
-	"names": [],
-	"mappings": "AAAA;;;;EAIE"
-}
