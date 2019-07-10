@@ -12,7 +12,8 @@
   @media screen and (max-width: 375px) {
     font-size: 4vw;
   }
-  th, td {
+  th,
+  td {
     padding: 0.5em;
   }
 }
@@ -26,22 +27,21 @@
 
 .svg {
   &--svg-baseline {
-    display: inline-flex; align-self: center;
+    display: inline-flex;
+    align-self: center;
     position: relative;
-    top: .125em;
+    top: 0.125em;
   }
 }
-.nav-block { }
 
 .items-list {
-
   margin: 0;
   padding: 0;
 
   &__item {
-    margin-bottom: .4em;
-    margin-right : .4em;
-    list-style : none;
+    margin-bottom: 0.4em;
+    margin-right: 0.4em;
+    list-style: none;
   }
 
   &__link {
@@ -55,24 +55,20 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100% 0px;
-    transition: background-size .15s, color .25s;
-    &:hover, &:focus {
+    transition: background-size 0.15s, color 0.25s;
+    &:hover,
+    &:focus {
       color: #ff7200;
       background-position: center 100%;
       background-size: 100% 8px;
     }
     &--actif,
-    &--actif:focus, &--actif:hover  {
+    &--actif:focus,
+    &--actif:hover {
       color: #ffffff;
       background-size: 100% 100%;
     }
   }
-
-
-}
-
-@media only screen and (min-width: 375px) and (max-width: 1250px) {
-
 }
 
 /* form */
@@ -80,7 +76,9 @@
   div {
     display: flex;
     flex-wrap: wrap;
-    margin: 0; padding: 0; border: none;
+    margin: 0;
+    padding: 0;
+    border: none;
     max-width: 368px;
     label {
       // grow ✓ shrink 𐄂 basis 100% (init size before remaining space is redistributed)
@@ -106,7 +104,9 @@
 }
 
 .markdown-body {
-  input, button {
+  flex: 1 1 auto;
+  input,
+  button {
     border: 1px solid #ff7200;
     &::placeholder {
       color: #eee;
@@ -129,4 +129,3 @@
     background-color: #ff7200;
   }
 }
-
