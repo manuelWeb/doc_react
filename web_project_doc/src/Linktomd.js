@@ -7,7 +7,7 @@ const listLink = [
   { id: 4, text: 'Atomic Design Method', link: 'atomic_design_systeme_SK.md' },
   { id: 5, text: 'Atomic Design exemples', link: 'atomic_design_exemples.md' },
   { id: 6, text: 'Grids out of date ', link: 'grids.md' },
-  { id: 7, text: 'React', link: 'react.md' },
+  // { id: 7, text: 'React', link: 'react.md' },
 ]
 
 const Emoji = props => (
